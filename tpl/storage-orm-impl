@@ -1,0 +1,54 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Domain\__DOMAIN__\Storage\__DRIVER____NAMESPACE__;
+
+// use DOF\Util\Collection;
+use DOF\DDD\__STORAGE__;
+// use Domain\__DOMAIN__\Entity\__NAME__;
+use Domain\__DOMAIN__\Repository\__NAME__Repository;
+
+/**
+ * @Repository(__NAME__Repository)
+ * @Driver(__DRIVER__)
+ * @Database(__DATABASE__)
+ * @Table(__TABLE__)
+ * @NoSync(0)
+ * @_Cache(0)
+ * @Comment(Comment of Table __NAME__)
+ * @Engine(InnoDB)
+ * @Charset(utf8mb4)
+ * @_Index(idx_created_at){of=created_at}
+ * @_Unique(uni_mobile){of=mobile}
+ */
+class __NAME__ORM extends __STORAGE__ implements __NAME__Repository
+{
+    /**
+     * @Column(column_1)
+     * @Type(varchar)
+     * @Comment(Comment of column_1)
+     * @Length(16)
+     * @_UnSigned(1)
+     * @_NotNull(0)
+     * @Default()
+     */
+    protected $property1;
+
+    // public function list(
+    //     int $page,
+    //     int $size,
+    //     Collection $filter,
+    //     string $sortField = null,
+    //     string $sortOrder = null
+    // ) {
+    //     // TO-BE-OVERWRITE
+    //     $builder = $this->sorter($sortField, $sortOrder);
+
+    //     if ($filter->xxx) {
+    //         $builder->where('xxx', $filter->xxx);
+    //     }
+
+    //     return $this->converts($builder->paginate($page, $size));
+    // }
+}

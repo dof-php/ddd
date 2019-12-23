@@ -1,0 +1,30 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Domain\__DOMAIN__\Assembler__NAMESPACE__;
+
+use DOF\DDD\Assembler;
+
+class __NAME__ extends Assembler
+{
+    // use \DOF\DDD\Traits\TimestampAssembler;
+
+    protected $compatibles = [
+        // 'created_at' => 'createdAt',
+        // 'deleted_at' => 'deletedAt',
+        // 'updated_at' => 'updatedAt',
+    ];
+
+    protected $converters = [
+        // 'createdAt' => 'formatTimestamp',
+        // 'deletedAt' => 'formatTimestamp',
+        // 'updatedAt' => 'formatTimestamp',
+    ];
+
+    protected $assemblers = [
+    ];
+
+    protected $recursive = [
+    ];
+}

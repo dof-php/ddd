@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Domain\__DOMAIN__\Repository__NAMESPACE__;
+
+// use DOF\Util\Collection;
+use DOF\DDD\ORMRepository;
+
+/**
+ * @Implementor(Domain\__DOMAIN__\Storage\__DRIVER__\__STORAGE__)
+ * @Entity(DOF\DDD\Entity\RequestLog)
+ */
+interface __NAME__Repository extends ORMRepository
+{
+    public function logging(array $context);
+}

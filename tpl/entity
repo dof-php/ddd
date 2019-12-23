@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Domain\__DOMAIN__\Entity__NAMESPACE__;
+
+use DOF\DDD\__PARENT__;
+
+/**
+ * @Title(Entity Title)
+ */
+class __NAME__ extends __PARENT__
+{
+    /**
+     * @Title(Property Name 1)
+     * @Type(String)
+     * @_Type(Model){model=Domain\__DOMAIN__\Model\XXXX}
+     * @_Type(Entity){entity=Domain\__DOMAIN__\Entity\XXXX}
+     * @Notes(Property Notes 1)
+     */
+    protected $property1;
+}

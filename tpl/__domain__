@@ -1,0 +1,18 @@
+<?php
+
+// The domain flag file, stores current domain meta data and MUST be version controlled
+
+return [
+    'title' => '',
+
+    'docs' => [
+
+        'appendixes' => [
+            // ['title' => 'foo-bar', 'path' => 'docs/foo.md']
+        ],
+
+        'assets' => [
+            // 'docs/images/bar.png',
+        ],
+    ],
+];

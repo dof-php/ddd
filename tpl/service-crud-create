@@ -1,0 +1,59 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Domain\__DOMAIN__\Service\CRUD;
+
+use Throwable;
+use DOF\DDD\Service;
+use DOF\Storage\Exceptor\ViolatedUniqueConstraint;
+use Domain\__DOMAIN__\Err;
+use Domain\__DOMAIN__\Repository\__ENTITY__Repository;
+use Domain\__DOMAIN__\Entity\__ENTITY__;
+
+class Create__ENTITY__ extends Service
+{
+    private $param1;
+
+    private $repository;
+    private $entity;
+
+    public function __construct(__ENTITY__Repository $repository, __ENTITY__ $entity)
+    {
+        $this->repository = $repository;
+        $this->entity = $entity;
+    }
+
+    public function execute()
+    {
+        // $entity = new __ENTITY__;
+
+        // if ($this->param1) {
+        // ...
+        // }
+        // $this->entity->updatedAt = 0;
+        // $this->entity->createdAt = \time();
+
+        try {
+            return $this->repository->add($this->entity);
+        } catch (ViolatedUniqueConstraint $th) {
+            $this->err(Err::DUPLICATE__ENTITY_UPPER__ATTR1', ['attr1' => $this->entity->attr1]);
+        } catch (Throwable $th) {
+            $this->throw('Create__ENTITY__Failed', $th);
+        }
+    }
+
+    public function setParam1(string $param1)
+    {
+        $this->param1 = $param1;
+
+        return $this;
+    }
+
+    public function setAttr1(string $attr1)
+    {
+        $this->entity->attr1 = $attr1;
+
+        return $this;
+    }
+}

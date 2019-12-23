@@ -1,0 +1,36 @@
+{
+    "name": "dof-php/ddd",
+    "description": "Domain driven development implementation in DOF PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dof-php",
+            "email": "me@dof.php"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "dof-php/storage": "dev-master",
+        "dof-php/framework": "dev-master"
+    },
+    "require-dev": {
+        "dof-php/testing": "dev-master"
+    },
+ 	"autoload": {
+		"psr-4": {
+			"DOF\\DDD\\": "./src/"
+		},
+		"files": [
+		],
+		"exclude-from-classmap": [
+       ]
+    },
+    "autoload-dev": {
+		"psr-4": {
+			"DOF\\DDD\\Test\\": "./test/"
+		}
+	},
+	"minimum-stability": "dev",
+    "prefer-stable": true
+}
