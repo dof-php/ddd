@@ -258,7 +258,7 @@ class __NAME__ORM extends ORMStorage implements __NAME__Repository
     //     $builder = $this->sorter($sortField, $sortOrder);
 
     //     if ($filter->xxx) {
-    //         $builder->where('xxx', $filter->xxx);
+    //         $builder->where($this->column('xxx'), $filter->xxx);
     //     }
 
     //     return $this->converts($builder->paginate($page, $size));

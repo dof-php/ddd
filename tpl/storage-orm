@@ -47,7 +47,7 @@ class __NAME__ORM extends __STORAGE__
     //     $builder = $this->sorter($sortField, $sortOrder);
 
     //     if ($filter->xxx) {
-    //         $builder->where('xxx', $filter->xxx);
+    //         $builder->where($this->column('xxx'), $filter->xxx);
     //     }
 
     //     return $this->converts($builder->paginate($page, $size));
