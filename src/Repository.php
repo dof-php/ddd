@@ -11,13 +11,13 @@ use DOF\Convention;
 use DOF\Util\IS;
 use DOF\Util\FS;
 use DOF\Util\Reflect;
-use DOF\Util\TypeHint;
-use DOF\Util\TypeCast;
 use DOF\DDD\Model;
 use DOF\DDD\Entity;
 use DOF\DDD\Storage;
 use DOF\DDD\CacheAdaptor;
 use DOF\DDD\RepositoryManager;
+use DOF\DDD\Util\TypeHint;
+use DOF\DDD\Util\TypeCast;
 use DOF\DDD\Exceptor\RepositoryExceptor;
 
 /**
