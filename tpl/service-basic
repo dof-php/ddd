@@ -14,7 +14,7 @@ class __NAME__ extends Service
 {
     private $param1;
 
-    private $repository;
+    // private $repository;
 
     // public function __construct(EntityRepository $repository)
     // {

@@ -54,7 +54,7 @@ interface ORMRepository extends RepositoryInterface
     public function list(
         int $page,
         int $size,
-        Collection $filter,
+        Collection $filter = null,
         string $sortField = null,
         string $sortOrder = null
     );

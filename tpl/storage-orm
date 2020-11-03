@@ -39,15 +39,17 @@ class __NAME__ORM extends __STORAGE__
     // public function list(
     //     int $page,
     //     int $size,
-    //     Collection $filter,
+    //     Collection $filter = null,
     //     string $sortField = null,
     //     string $sortOrder = null
     // ) {
     //     // TO-BE-OVERWRITE
     //     $builder = $this->sorter($sortField, $sortOrder);
 
-    //     if ($filter->xxx) {
-    //         $builder->where($this->column('xxx'), $filter->xxx);
+    //     if ($filter) {
+    //         if ($filter->xxx) {
+    //             $builder->where($this->column('xxx'), $filter->xxx);
+    //         }
     //     }
 
     //     return $this->converts($builder->paginate($page, $size));
