@@ -55,7 +55,7 @@ class Command
                         $console->line(\join(' ', [
                             $console->render('[OK]', Color::SUCCESS),
                             DOF::pathof($file),
-                            $console->render(\round($delay, 8).'s', Color::TIPS)
+                            $console->render(\round($delay, 4).'s', Color::TIPS)
                         ]));
                     }
                 } else {
