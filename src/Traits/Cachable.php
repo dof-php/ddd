@@ -22,7 +22,7 @@ trait Cachable
             public function __call(string $method, array $params = [])
             {
                 \array_unshift($params, $this->key);
-                return $this->cachable->{$method}($params);
+                return $this->cachable->{$method}(...$params);
             }
         };
     }
