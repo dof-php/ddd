@@ -339,7 +339,7 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('entity', null, true), CASE_UPPER));
-        if (Str::end($name, '.php', true)) {
+        if (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $pathof = DOF::pathof($class = FS::path($path, Convention::DIR_ENTITY, "{$name}.php"));
@@ -390,7 +390,7 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('model', null, true), CASE_UPPER));
-        if (Str::end($name, '.php', true)) {
+        if (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $pathof = DOF::pathof($class = FS::path($path, Convention::DIR_MODEL, "{$name}.php"));
@@ -445,11 +445,11 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('storage', null, true), CASE_UPPER));
-        if (Str::end($name, 'ORM', true)) {
+        if (Str::end('ORM', $name, true)) {
             $name = Str::shift($name, 3, true);
-        } elseif (Str::end($name, 'ORM.php', true)) {
+        } elseif (Str::end('ORM.php', $name, true)) {
             $name = Str::shift($name, 7, true);
-        } elseif (Str::end($name, '.php', true)) {
+        } elseif (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $driver = Driver::format($console->getOption('driver', 'mysql'));
@@ -509,11 +509,11 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('storage', null, true), CASE_UPPER));
-        if (Str::end($name, 'KV', true)) {
+        if (Str::end('KV', $name, true)) {
             $name = Str::shift($name, 2, true);
-        } elseif (Str::end($name, 'KV.php', true)) {
+        } elseif (Str::end('KV.php', $name, true)) {
             $name = Str::shift($name, 6, true);
-        } elseif (Str::end($name, '.php', true)) {
+        } elseif (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $driver = Driver::format($console->getOption('driver', 'redis'));
@@ -559,11 +559,11 @@ class Command
             $console->error('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('repo', null, true), CASE_UPPER));
-        if (Str::end($name, 'Repository', true)) {
+        if (Str::end('Repository', $name, true)) {
             $name = Str::shift($name, 10, true);
-        } elseif (Str::end($name, 'Repository.php', true)) {
+        } elseif (Str::end('Repository.php', $name, true)) {
             $name = Str::shift($name, 14, true);
-        } elseif (Str::end($name, '.php', true)) {
+        } elseif (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $driver = Driver::format($console->getOption('driver', 'mysql'));
@@ -633,7 +633,7 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('service', null, true), CASE_UPPER));
-        if (Str::end($name, '.php', true)) {
+        if (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $pathof = DOF::pathof($class = FS::path($path, Convention::DIR_SERVICE, "{$name}.php"));
@@ -685,7 +685,7 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('asm', null, true), CASE_UPPER));
-        if (Str::end($name, '.php', true)) {
+        if (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $pathof = DOF::pathof($class = FS::path($path, Convention::DIR_ASSEMBLER, "{$name}.php"));
@@ -812,7 +812,7 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('event', null, true), CASE_UPPER));
-        if (Str::end($name, '.php', true)) {
+        if (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $pathof = DOF::pathof($class = FS::path($path, Convention::DIR_EVENT, "{$name}.php"));
@@ -848,7 +848,7 @@ class Command
             $console->fail('DomainNotExists', \compact('domain'));
         }
         $name = \str_replace('\\', FS::DS, Format::u2c($console->getOption('listener', null, true), CASE_UPPER));
-        if (Str::end($name, '.php', true)) {
+        if (Str::end('.php', $name, true)) {
             $name = Str::shift($name, 4, true);
         }
         $pathof = DOF::pathof($class = FS::path($path, Convention::DIR_LISTENER, "{$name}.php"));

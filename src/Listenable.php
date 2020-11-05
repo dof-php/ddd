@@ -17,6 +17,7 @@ abstract class Listenable implements Task
     use \DOF\Traits\Tracker;
     use \DOF\Traits\ObjectData;
     use \DOF\Traits\ExceptorThrow;
+    use \DOF\DDD\Traits\Cachable;
 
     const QUEUE_PREFIX = 'listener';
     const QUEUE_DRIVER = 'LISTENER_QUEUE_DRIVER';
