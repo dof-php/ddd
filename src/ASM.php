@@ -86,6 +86,19 @@ final class ASM
                 }
             }
 
+            // If value is an object without fields params
+            // Then return an empty object to avoid origin object details leak
+            // Which means object value MUST need request fields
+            if (\is_object($value)) {
+                if (empty($params)) {
+                    $value = new class {
+                    };
+                } elseif (\method_exists($value, '__trim__')) {
+                    $data[$name] = ASM::assemble($value->__trim__(), $params, $assembler);
+                    continue;
+                }
+            }
+
             $data[$name] = $value;
         }
 
