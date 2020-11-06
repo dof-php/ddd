@@ -10,6 +10,7 @@ use DOF\DDD\Service;
 use DOF\DDD\Entity;
 use DOF\DDD\Model;
 use DOF\DDD\Util\IS;
+use DOF\DDD\Util\Str;
 use DOF\DDD\Exceptor\AssemblerExceptor;
 
 final class ASM
@@ -57,6 +58,10 @@ final class ASM
             return null;
         }
 
+        // if (\is_object($result) && \method_exists($result, '__trim__')) {
+        //     $result = $result->__trim__();
+        // }
+
         if ($assembler) {
             if (\is_string($assembler)) {
                 if (! \class_exists($assembler)) {
@@ -93,8 +98,8 @@ final class ASM
                 if (empty($params)) {
                     $value = new class {
                     };
-                } elseif (\method_exists($value, '__trim__')) {
-                    $data[$name] = ASM::assemble($value->__trim__(), $params, $assembler);
+                } else {
+                    $data[$name] = ASM::assemble($value, $params, $assembler);
                     continue;
                 }
             }
@@ -133,7 +138,8 @@ final class ASM
     public static function match(string $key, $result = null)
     {
         if (\is_object($result)) {
-            return $result->{$key} ?? null;
+            // All object properties in DOF start with `_` are treated as meta properties and are not get-able outside object scope
+            return Str::start('_', $key) ? null : ($result->{$key} ?? null);
         }
         
         if (\is_array($result)) {
