@@ -88,7 +88,7 @@ final class ASM
 
             // If value is an object without fields params
             // Then return an empty object to avoid origin object details leak
-            // Which means object value MUST need request fields
+            // Which means object value MUST need request fields to get its properties
             if (\is_object($value)) {
                 if (empty($params)) {
                     $value = new class {
