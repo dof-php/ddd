@@ -58,8 +58,8 @@ final class ASM
             return null;
         }
 
-        // if (\is_object($result) && \method_exists($result, '__trim__')) {
-        //     $result = $result->__trim__();
+        // if (\is_object($result) && \method_exists($result, '__clone__')) {
+        //     $result = clone $result;
         // }
 
         if ($assembler) {
