@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace DOF\DDD;
 
+use DOF\Util\Str;
 use DOF\Util\Paginator;
 use DOF\DDD\Assembler;
 use DOF\DDD\Service;
 use DOF\DDD\Entity;
 use DOF\DDD\Model;
 use DOF\DDD\Util\IS;
-use DOF\DDD\Util\Str;
 use DOF\DDD\Exceptor\AssemblerExceptor;
 
 final class ASM
