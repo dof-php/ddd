@@ -77,9 +77,7 @@ final class ASM
 
         foreach ($selfs as $name => $params) {
             $name  = (string) $name;
-            $value = ($assembler && \is_array($params))
-                ? $assembler->match($name, $params)
-                : ASM::match($name, $result);
+            $value = ($assembler && \is_array($params)) ? $assembler->match($name, $params) : ASM::match($name, $result);
 
             if (\is_null($value)) {
                 ++$nulls;

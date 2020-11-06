@@ -15,21 +15,21 @@ class Assembler
     /**
      * Compatibles are fields name which will be used to check when requested field not directly exists in origin
      * All key in $compatibles are case insensitive
-     * 
+     *
      * @var array
      */
     protected $compatibles = [];
 
     /**
      * Reference field recursive or not config rules
-     * 
+     *
      * @var array
      */
     protected $recursive = [];
 
     /**
      * Assemblers will be used when current assember has reference field
-     * 
+     *
      * @var array
      */
     protected $assemblers = [];
@@ -63,7 +63,7 @@ class Assembler
         }
         if (\is_null($val)) {
             $key = $this->compatibles[$name] ?? null;
-            // If key no exists even in compatibles setting
+            // If target key not exists even in compatibles setting
             // We tried non-standard field name the last two times: all-lowercase and ALL-UPPERCASE
             if (\is_null($key)) {
                 $key = $this->compatibles[\strtolower($name)] ?? null;
