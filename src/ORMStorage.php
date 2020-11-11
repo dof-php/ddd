@@ -335,7 +335,7 @@ class ORMStorage extends Storage
     public function chunk(int $chunk, Closure $task, bool $loop = true)
     {
         $this->builder()->chunk($chunk, function ($data, $batch) use ($task, $loop) {
-            $data = $loop ? $this->converts($data) : $this->convert($data);
+            $data = $loop ? $this->convert($data) : $this->converts($data);
             $task($data, $batch);
         }, $loop);
     }
